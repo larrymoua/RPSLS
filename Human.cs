@@ -10,24 +10,27 @@ namespace RockPaperScissorsLizardSpock
     {
         public Human()
         {
-            roundsWon = 0;
                
         }//constructor
-        public override void GestureChosen( )
+        public override void GestureChosen()
         {
-            int x = 6;
-            int i;
-            string[] gestureOptions = new string[5] { "ROCK", "PAPER", "SCISSORS", "LIZARD", "SPOCK" };
+            int index;
 
-            Console.WriteLine("\n\n" + name + " please select your Gesture.\n1.ROCK\n2.PAPER\n3.SCISSORS\n4.LIZARD\n5.SPOCK");
-            i = Convert.ToInt16(Console.ReadLine());
-            if ( i > x || i < 0)
+            for(int i = 0; i < gestureOptions.Count ; i++)
+            {
+                Console.WriteLine($"\n{i+1}" + " ." + gestureOptions[i]);
+            }
+
+            try
+            {
+                index = Convert.ToInt16(Console.ReadLine());
+                gesture = gestureOptions[index-1];
+            }
+            catch (Exception)
             {
                 Console.WriteLine("\n\nINVALID CHOICE, PLEASE TRY AGAIN!");
-                GestureChosen();
-            }
-            gesture = gestureOptions[i-1];
-          
+                return;
+            }//end tryCatch                    
         }//end GestureChosen
     }//end Class
 }//end Namespace

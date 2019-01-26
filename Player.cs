@@ -11,12 +11,14 @@ namespace RockPaperScissorsLizardSpock
         public string name;
         public int roundsWon;
         public string gesture;
+        public List<string> gestureOptions = new List<string>() { "ROCK", "PAPER", "SCISSORS", "LIZARD", "SPOCK" };
 
         public Player()
         {
+            roundsWon = 0;
 
         }//end Players
-        public virtual void AddScore()
+        public void AddScore()
         {
             roundsWon++;
         }//end AddScore

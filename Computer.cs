@@ -7,21 +7,20 @@ using System.Threading.Tasks;
 namespace RockPaperScissorsLizardSpock
 {
     class Computer : Player
-    { 
-
+    {
+        Random rnd;
         public Computer()
         {
-            roundsWon = 0;
-            name = "cPU";
+            
+            name = "CpU";
+            rnd = new Random();
+           
         }//constructor
         public override void GestureChosen()
         {
-            Random rnd = new Random(); 
-            int i;
-            string [] gestureOptions = new string[5] {"ROCK", "PAPER" ,"SCISSORS","LIZARD", "SPOCK" };
-            i = rnd.Next(4);
-          
-            gesture = gestureOptions[i];
+            int indexRandom;
+            indexRandom = rnd.Next(gestureOptions.Count);
+            gesture = gestureOptions[indexRandom];
         }
     }//end computer
 }//end namespace
