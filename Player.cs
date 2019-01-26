@@ -22,7 +22,7 @@ namespace RockPaperScissorsLizardSpock
         {
             roundsWon++;
         }//end AddScore
-        public abstract void GestureChosen();
+        public abstract void ChooseGesture();
      
     }//end class
 }//end namespace

@@ -12,8 +12,7 @@ namespace RockPaperScissorsLizardSpock
         {
             GamePlay gameplay = new GamePlay();
             UserInterface userinterface = new UserInterface();
-            userinterface.Background();
-            userinterface.IntroPage();
+            userinterface.RunUserInterFace();
             gameplay.RunGame();
 
         }//end Main

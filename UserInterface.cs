@@ -12,6 +12,11 @@ namespace RockPaperScissorsLizardSpock
         {
         
         }//end constructor
+        public void RunUserInterFace()
+        {
+            Background();
+            IntroPage();
+        }
         public void Background()
         {
             Console.BackgroundColor = ConsoleColor.Black;

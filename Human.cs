@@ -12,7 +12,7 @@ namespace RockPaperScissorsLizardSpock
         {
                
         }//constructor
-        public override void GestureChosen()
+        public override void ChooseGesture()
         {
             int index;
 

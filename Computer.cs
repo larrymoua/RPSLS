@@ -16,7 +16,7 @@ namespace RockPaperScissorsLizardSpock
             rnd = new Random();
            
         }//constructor
-        public override void GestureChosen()
+        public override void ChooseGesture()
         {
             int indexRandom;
             indexRandom = rnd.Next(gestureOptions.Count);
