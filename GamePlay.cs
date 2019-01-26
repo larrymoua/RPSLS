@@ -13,7 +13,6 @@ namespace RockPaperScissorsLizardSpock
         Player playerTwo;
         int roundsToWin;
    
-
         public GamePlay()
         {
             roundsToWin = 2;
@@ -78,6 +77,25 @@ namespace RockPaperScissorsLizardSpock
             PlayAgain();
 
         }//end RunGame
+        //public void NewNew()
+        //{
+        //    int d;
+        //    Console.WriteLine("enter number");
+        //    d = Convert.ToInt16(Console.ReadLine());
+        //    if (d == 0)
+        //    {
+        //        // tie
+        //    }
+        //    else if (d == 1 || d == 3)
+        //    {
+        //        //play two wins
+        //    }
+        //    else if (d == 2 || d == 4)
+        //    {
+        //        //player one wins
+        //    }
+
+        //}
         public void CompareGestures()
         {
             while (playerOne.roundsWon < roundsToWin & playerTwo.roundsWon < roundsToWin)

@@ -20,7 +20,6 @@ namespace RockPaperScissorsLizardSpock
             {
                 Console.WriteLine($"\n{i+1}" + " ." + gestureOptions[i]);
             }
-
             try
             {
                 index = Convert.ToInt16(Console.ReadLine());
