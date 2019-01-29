@@ -89,29 +89,29 @@ namespace RockPaperScissorsLizardSpock
 
                 if (playerOne.gesture == playerTwo.gesture)
                 {
-                    ShowGesturesThrownIfTieRound(playerOne, playerTwo);
+                    ShowGesturesThrownShowWinOrTied(playerOne, playerTwo);
 
                 }// gesture TIE
                 else if (playerOne.gesture == "ROCK")
                 {
                     if (playerTwo.gesture == "SCISSORS" || playerTwo.gesture == "LIZARD")
                     {
-                        ShowGesturesThrownIfPlayerWonRound(playerOne, playerTwo);
+                        ShowGesturesThrownShowWinOrTied(playerOne, playerTwo);
                     }
                     else if (playerTwo.gesture == "PAPER" || playerTwo.gesture == "SPOCK")
                     {
-                        ShowGesturesThrownIfPlayerWonRound(playerTwo, playerOne);
+                        ShowGesturesThrownShowWinOrTied(playerTwo, playerOne);
                     }
                 }
                 else if (playerOne.gesture == "LIZARD")
                 {
                     if (playerTwo.gesture == "PAPER" || playerTwo.gesture == "SPOCK")
                     {
-                        ShowGesturesThrownIfPlayerWonRound(playerOne, playerTwo);
+                        ShowGesturesThrownShowWinOrTied(playerOne, playerTwo);
                     }
                     else if (playerTwo.gesture == "SCISSORS" || playerTwo.gesture == "ROCK")
                     {
-                        ShowGesturesThrownIfPlayerWonRound(playerTwo, playerOne);
+                        ShowGesturesThrownShowWinOrTied(playerTwo, playerOne);
                     }
 
                 }
@@ -119,11 +119,11 @@ namespace RockPaperScissorsLizardSpock
                 {
                     if (playerTwo.gesture == "SCISSORS" || playerTwo.gesture == "ROCK")
                     {
-                        ShowGesturesThrownIfPlayerWonRound(playerOne, playerTwo);
+                        ShowGesturesThrownShowWinOrTied(playerOne, playerTwo);
                     }
                     else if (playerTwo.gesture == "LIZARD" || playerTwo.gesture == "PAPER")
                     {
-                        ShowGesturesThrownIfPlayerWonRound(playerTwo, playerOne);
+                        ShowGesturesThrownShowWinOrTied(playerTwo, playerOne);
                     }
 
                 }
@@ -131,11 +131,11 @@ namespace RockPaperScissorsLizardSpock
                 {
                     if (playerTwo.gesture == "PAPER" || playerTwo.gesture == "LIZARD")
                     {
-                        ShowGesturesThrownIfPlayerWonRound(playerOne, playerTwo);
+                        ShowGesturesThrownShowWinOrTied(playerOne, playerTwo);
                     }
                     else if (playerTwo.gesture == "SPOCK" || playerTwo.gesture == "ROCK")
                     {
-                        ShowGesturesThrownIfPlayerWonRound(playerTwo, playerOne);
+                        ShowGesturesThrownShowWinOrTied(playerTwo, playerOne);
                     }
 
                 }
@@ -143,11 +143,11 @@ namespace RockPaperScissorsLizardSpock
                 {
                     if (playerTwo.gesture == "ROCK" || playerTwo.gesture == "SPOCK")
                     {
-                        ShowGesturesThrownIfPlayerWonRound(playerOne, playerTwo);
+                        ShowGesturesThrownShowWinOrTied(playerOne, playerTwo);
                     }
                     else if (playerTwo.gesture == "SCISSORS" || playerTwo.gesture == "LIZARD")
                     {
-                        ShowGesturesThrownIfPlayerWonRound(playerTwo, playerOne);
+                        ShowGesturesThrownShowWinOrTied(playerTwo, playerOne);
                     }
                 }
             }//end Whileloop
@@ -184,20 +184,20 @@ namespace RockPaperScissorsLizardSpock
                 PlayAgain();
             }
         }//end PlayAgain
-        public void ShowGesturesThrownIfPlayerWonRound(Player winner, Player loser)
-        {
-            winner.AddScore();
+        public void ShowGesturesThrownShowWinOrTied(Player winner, Player loser)//Shows if win ,loss, or tie / display score / display gestures thrown
+        {  
             Console.WriteLine("\n" + winner.name + " threw " + winner.gesture);
             Console.WriteLine("\n" + loser.name + " threw " + loser.gesture);
-            Console.WriteLine("\n" + winner.name + " wins this round! ");
+            if(winner.gesture == loser.gesture)
+            {
+                Console.WriteLine("\nLOOKS LIKE A TIE TO MEH, NO WINNERS! ");
+            }
+            else
+            {
+                winner.AddScore();
+                Console.WriteLine("\n" + winner.name + " wins this round! ");
+            }
             Console.WriteLine("\n\nScore   " + winner.name + " : " + winner.roundsWon + "\t\t" + loser.name + " : " + loser.roundsWon);//shows score
-        }//end
-        public void ShowGesturesThrownIfTieRound(Player playerOne, Player playerTwo)
-        {
-            Console.WriteLine("\n" + playerOne.name + " threw " + playerOne.gesture);
-            Console.WriteLine("\n" + playerTwo.name + " threw " + playerTwo.gesture);
-            Console.WriteLine("\nLOOKS LIKE A TIE TO MEH, NO WINNERS! ");
-            Console.WriteLine("\n\nScore   " + playerOne.name + " : " + playerOne.roundsWon + "\t\t" + playerTwo.name + " : " + playerTwo.roundsWon);//shows Score
         }//end
     }//end class
 }//end namespace
