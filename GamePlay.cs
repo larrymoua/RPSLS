@@ -20,6 +20,8 @@ namespace RockPaperScissorsLizardSpock
         }//end constructor
         public void DisplayRules()//display rules
         {
+            Console.Clear();
+
             Console.WriteLine("\t\t\t\tRules");
             Console.WriteLine("\n\n\t\t\tROCK beats - LIZARD, SCISSORS");
             Console.WriteLine("\n\n\t\t\tLIZARD beats - PAPER, SPOCK");
@@ -77,25 +79,7 @@ namespace RockPaperScissorsLizardSpock
             PlayAgain();
 
         }//end RunGame
-        //public void NewNew()
-        //{
-        //    int d;
-        //    Console.WriteLine("enter number");
-        //    d = Convert.ToInt16(Console.ReadLine());
-        //    if (d == 0)
-        //    {
-        //        // tie
-        //    }
-        //    else if (d == 1 || d == 3)
-        //    {
-        //        //play two wins
-        //    }
-        //    else if (d == 2 || d == 4)
-        //    {
-        //        //player one wins
-        //    }
 
-        //}
         public void CompareGestures()//see which gesture wins between each player
         {
             while (playerOne.roundsWon < roundsToWin & playerTwo.roundsWon < roundsToWin)
@@ -207,13 +191,13 @@ namespace RockPaperScissorsLizardSpock
             Console.WriteLine("\n" + loser.name + " threw " + loser.gesture);
             Console.WriteLine("\n" + winner.name + " wins this round! ");
             Console.WriteLine("\n\nScore   " + winner.name + " : " + winner.roundsWon + "\t\t" + loser.name + " : " + loser.roundsWon);//shows score
-        }//end showGesturesThrownIfSomeOneWonRound
+        }//end
         public void ShowGesturesThrownIfTieRound(Player playerOne, Player playerTwo)
         {
             Console.WriteLine("\n" + playerOne.name + " threw " + playerOne.gesture);
             Console.WriteLine("\n" + playerTwo.name + " threw " + playerTwo.gesture);
             Console.WriteLine("\nLOOKS LIKE A TIE TO MEH, NO WINNERS! ");
             Console.WriteLine("\n\nScore   " + playerOne.name + " : " + playerOne.roundsWon + "\t\t" + playerTwo.name + " : " + playerTwo.roundsWon);//shows Score
-        }
+        }//end
     }//end class
 }//end namespace
